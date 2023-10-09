@@ -37,10 +37,10 @@ while task_n != 3:
                            "\t1. Порахуйте кількість літер, цифр у рядку. Виведіть обидві кількості на екран.\n"
                            "\t2. Порахуйте скільки разів у рядку зустрічається потрібний символ.\n"
                            "\t3. Stop checking tasks\n"
-                           "\t4."
-                           "\t5."
-                           "\t6."
-                           "\t7."
+                           "\t4.\n"
+                           "\t5.\n"
+                           "\t6.\n"
+                           "\t7.\n"
                            "Enter choise here: "))
 
         match task_n:
@@ -48,7 +48,17 @@ while task_n != 3:
                 finish_t1_l = "y"
                 while finish_t1_l == "y":
 
+                    def multiplication(list_of_nums_t1):
+                        result_t1 = 1
+                        for i in list_of_nums_t1:
+                            result_t1 = i * result_t1
+                        return result_t1
 
+                    rand_list_t1 = []
+                    for i in range(10):
+                        rand_list_t1.append(random.randint(1, 10))
+                    print(f"\t{rand_list_t1}")
+                    print(f"\tResult of multiplication is {multiplication(rand_list_t1)}.")
 
                     while finish_t1_l != "y" or finish_t1_l != "n":
                         finish_t1 = input("Do you want to continue?\n"
