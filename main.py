@@ -49,9 +49,9 @@ while task_n != 3:
                 finish_t1_l = "y"
                 while finish_t1_l == "y":
 
-                    def multiplication(list_of_nums_t1):
+                    def multiplication(list_of_nums):
                         result_t1 = 1
-                        for i in list_of_nums_t1:
+                        for i in list_of_nums:
                             result_t1 = i * result_t1
                         return result_t1
 
@@ -82,14 +82,14 @@ while task_n != 3:
                     smallest_ch = 0
 
 
-                    def look_for_minimal_ch(list_of_nums_t2):
+                    def look_for_minimal_ch(list_of_nums):
                         global smallest_ch
                         a = 0
-                        for i in range(1,len(list_of_nums_t2)):
-                            if list_of_nums_t2[a] <= list_of_nums_t2[i]:
-                                smallest_ch = list_of_nums_t2[a]
+                        for i in range(1,len(list_of_nums)):
+                            if list_of_nums[a] <= list_of_nums[i]:
+                                smallest_ch = list_of_nums[a]
                             else:
-                                smallest_ch = list_of_nums_t2[i]
+                                smallest_ch = list_of_nums[i]
                                 a = i
                         return smallest_ch
 
@@ -118,9 +118,9 @@ while task_n != 3:
                 finish_t3_l = "y"
                 while finish_t3_l == "y":
 
-                    def count_of_prime_char(list_of_nums_t3):
+                    def count_of_prime_char(list_of_nums):
                         cont_pr_t3 = 0
-                        for i in list_of_nums_t3:
+                        for i in list_of_nums:
                             if 1 <= i <= 3 or i == 5 or i == 7:
                                 cont_pr_t3 += 1
                             elif i % 2 != 0 and i % 3 != 0 and i % 5 != 0 and i % 7 != 0:
@@ -152,7 +152,22 @@ while task_n != 3:
                 finish_t4_l = "y"
                 while finish_t4_l == "y":
 
-                    print("4")
+                    def remove_character(list_of_nums, character):
+                        cont_of_ins = list_of_nums.count(character)
+                        if cont_of_ins == 0:
+                            print(f"\tThis list does not contain {character} in it.")
+                        else:
+                            for i in range(cont_of_ins):
+                                list_of_nums.remove(character)
+                            print(f"\tHere is the list without {character}: {list_of_nums}. "
+                                      f"Count of removed characters is {cont_of_ins}")
+
+                    list_of_nums_t4 = []
+                    for i in range(10):
+                        list_of_nums_t4.append(random.randint(0, 50))
+                    print(f"\t{list_of_nums_t4}")
+                    char_to_remove = int(input("\tEnter here character to remove from the list upper: "))
+                    remove_character(list_of_nums_t4, char_to_remove)
 
                     while finish_t4_l != "y" or finish_t4_l != "n":
                         finish_t4 = input("Do you want to continue?\n"
