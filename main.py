@@ -96,7 +96,7 @@ while task_n != 3:
 
                     list_of_nums_t2 = []
                     for i in range(10):
-                        list_of_nums_t2.append(random.randint(1, 10))
+                        list_of_nums_t2.append(random.randint(0, 50))
                     print(f"\t{list_of_nums_t2}")
                     print(f"\tSmallest character in list is {look_for_minimal_ch(list_of_nums_t2)}.")
 
@@ -118,7 +118,21 @@ while task_n != 3:
                 finish_t3_l = "y"
                 while finish_t3_l == "y":
 
-                    print("3")
+                    def count_of_prime_char(list_of_nums_t3):
+                        cont_pr_t3 = 0
+                        for i in list_of_nums_t3:
+                            if 1 <= i <= 3 or i == 5 or i == 7:
+                                cont_pr_t3 += 1
+                            elif i % 2 != 0 and i % 3 != 0 and i % 5 != 0 and i % 7 != 0:
+                                cont_pr_t3 += 1
+                        return cont_pr_t3
+
+
+                    list_of_nums_t3 = []
+                    for i in range(10):
+                        list_of_nums_t3.append(random.randint(0, 50))
+                    print(f"\t{list_of_nums_t3}")
+                    print(f"\tCount of prime numbers is {count_of_prime_char(list_of_nums_t3)}.")
 
                     while finish_t3_l != "y" or finish_t3_l != "n":
                         finish_t3 = input("Do you want to continue?\n"
