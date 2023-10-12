@@ -41,7 +41,7 @@ while task_n != 3:
                            "\t4. Task 4.\n"
                            "\t5. Task 5.\n"
                            "\t6. Task 6.\n"
-                           "\t7. Task 7.\n"
+                           "\t7. Finish with checking tasks.\n"
                            "Enter your choice here: "))
 
         match task_n:
@@ -92,6 +92,12 @@ while task_n != 3:
                                 smallest_ch = list_of_nums[i]
                                 a = i
                         return smallest_ch
+
+                    # v2
+                    # def look_for_minimal_ch(list_of_nums):
+                    #     global smallest_ch
+                    #     smallest_ch = min(list_of_nums)
+                    #     return smallest_ch
 
 
                     list_of_nums_t2 = []
@@ -187,7 +193,36 @@ while task_n != 3:
                 finish_t5_l = "y"
                 while finish_t5_l == "y":
 
-                    print("5")
+                    def look_dir_duplicates(list_of_nums_n1, list_of_nums_n2):
+                        list_of_duplicates = []
+                        list_n1 = list(set(list_of_nums_n1))
+                        list_n2 = list(set(list_of_nums_n2))
+                        if len(list_n1) > len(list_n2):
+                            for i in list_n2:
+                                for a in list_n1:
+                                   if i == a:
+                                       list_of_duplicates.append(i)
+                                       break
+                        else:
+                            for i in list_n1:
+                                for a in list_n2:
+                                   if i == a:
+                                       list_of_duplicates.append(a)
+                                       break
+                        if len(list_of_duplicates) == 0:
+                            print("No duplicates, boss!")
+                        else:
+                            print(f"Here is the list of duplicates in lists upper {list_of_duplicates}.")
+
+                    list_of_nums_t5_1 = []
+                    for i in range(10):
+                        list_of_nums_t5_1.append(random.randint(0, 10))
+                    list_of_nums_t5_2 = []
+                    for i in range(10):
+                        list_of_nums_t5_2.append(random.randint(0, 10))
+                    print(f"\t{list_of_nums_t5_1}")
+                    print(f"\t{list_of_nums_t5_2}")
+                    look_dir_duplicates(list_of_nums_t5_1, list_of_nums_t5_2)
 
                     while finish_t5_l != "y" or finish_t5_l != "n":
                         finish_t5 = input("Do you want to continue?\n"
