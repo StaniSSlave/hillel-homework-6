@@ -194,7 +194,7 @@ while task_n != 3:
                 while finish_t5_l == "y":
 
                     def look_dir_duplicates(list_of_nums_n1, list_of_nums_n2):
-                        list_of_duplicates = []
+                        global list_of_duplicates
                         list_n1 = list(set(list_of_nums_n1))
                         list_n2 = list(set(list_of_nums_n2))
                         if len(list_n1) > len(list_n2):
@@ -209,11 +209,9 @@ while task_n != 3:
                                    if i == a:
                                        list_of_duplicates.append(a)
                                        break
-                        if len(list_of_duplicates) == 0:
-                            print("No duplicates, boss!")
-                        else:
-                            print(f"Here is the list of duplicates in lists upper {list_of_duplicates}.")
+                        return list_of_duplicates
 
+                    list_of_duplicates = []
                     list_of_nums_t5_1 = []
                     for i in range(10):
                         list_of_nums_t5_1.append(random.randint(0, 10))
@@ -223,6 +221,10 @@ while task_n != 3:
                     print(f"\t{list_of_nums_t5_1}")
                     print(f"\t{list_of_nums_t5_2}")
                     look_dir_duplicates(list_of_nums_t5_1, list_of_nums_t5_2)
+                    if len(list_of_duplicates) == 0:
+                        print("No duplicates, boss!")
+                    else:
+                        print(f"Here is the list of duplicates in lists upper {list_of_duplicates}.")
 
                     while finish_t5_l != "y" or finish_t5_l != "n":
                         finish_t5 = input("Do you want to continue?\n"
@@ -242,7 +244,19 @@ while task_n != 3:
                 finish_t6_l = "y"
                 while finish_t6_l == "y":
 
-                    print("6")
+                    def exponentiation (list_of_nums, degree):
+                        list_after_graduating = []
+                        for i in list_of_nums:
+                            a = i ** degree
+                            list_after_graduating.append(a)
+                        return list_after_graduating
+
+                    list_of_nums_t6 = []
+                    for i in range(10):
+                        list_of_nums_t6.append(random.randint(0, 10))
+                    print(f"\t{list_of_nums_t6}")
+                    degree_inp = int(input("Enter degree for exponentiation: "))
+                    print(f"Here is the list of the same numbers, but after exponentiation: {exponentiation(list_of_nums_t6, degree_inp)}")
 
                     while finish_t6_l != "y" or finish_t6_l != "n":
                         finish_t6 = input("Do you want to continue?\n"
